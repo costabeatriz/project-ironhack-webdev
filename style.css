@@ -1,0 +1,39 @@
+
+*{
+    background-color: rgb(185, 251, 157);
+}
+body{
+    background-image: url(/img/background-header.png);
+    height: 130px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+.troll{
+    margin: 0;
+    height: 110px;
+    width: 90px;
+    background:none;
+}
+h1{
+    text-align: center;
+    color:rgb(255, 26, 198);
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    background:none;
+}
+main{
+    background-size: cover;
+
+}
+h4{
+    margin-top: 0px;
+    text-align: center;
+    color:rgb(119, 186, 241);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    background: none;
+}
