@@ -1,4 +1,4 @@
-/**  
+
 1. Joga-se o dado, participante que fizer o maior número de pontos inicia o jogo, continuando as jogadas em sentido horário.
 
 2.Joga-se com um dado e os avanços são feitos de acordo com os pontos obtidos com o lançamentodos dados.
@@ -29,5 +29,3 @@ final só pode ser obtida por um número exato nos dados.
 
 12.Se o jogador tirar mais do que o necessário, ele vai até o fim e volta, tendo que aguardar sua próxima jogada. O vencedor é o
 primeiro a levar seus quatro peões ao ponto de chegada da sua cor.
-
-*/
