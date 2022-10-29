@@ -13,32 +13,20 @@
         <img src="/img/troll.png" class="troll" alt="troll">
         <h1>Troll's kingdom </h1>
     </header>
-   <main>
-    <h4>Help trolls get on track to their kingdom!</h4>
-    <div class="start">
-        <button id="start-button">Start</button>
-        <button id="audio-button">Music ON</button>
-        <button class="dice-button">Dice</button>
-    </div>
-   <div class="players">
-    <button id="djSuki">
-    <img src="/img/Dj Suki.png" class="djsuki-img" alt="djsuki-img">
-    <span>Dj Suki</span>
-    </button>
-    <button id="biggie">
-    <img src="/img/biggie.png" class="biggie-img" alt="biggie-img">
-    <span>Biggie</span>
-    </button>
-    <button id="poppy">
-        <img src="/img/poppy.png" class="poppy-img" alt="poppy-img">
-        <span>Poppy</span>
-        </button>
-    <button id="branch">
-    <img src="/img/branch.png" class="branch-img" alt="branch-img">
-    <span>Guy</span>
-    </button>
-   </div>
-   </main>
+    <main>
+        <canvas id="canvas"></canvas>
+        <div id="word"></div>
+        <div id="categories-container"></div>
+            <div>
+                <input id="letter-input" type="text" name="letter-input" placeholder="Enter a letter">
+            </div>
+            <div class="game-buttons">
+                <button id="start-button">Start new game</button>
+                <button id="restart-button">Restart game</button>
+                <div id="text-result"></div>
+            </div>
+        <span id="clue"></span>
+    </main>
 </body>
 <footer>
 
