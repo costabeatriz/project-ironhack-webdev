@@ -10,26 +10,33 @@
 </head>
 <body>
     <header>
-        <img src="/img/troll.png" class="troll" alt="troll">
-        <h1>Troll's kingdom </h1>
+        
     </header>
     <main>
-        <canvas id="canvas"></canvas>
+        <div class="game-buttons">
+            <button id="start-button">Start new game</button>
+            <button id="reset-button">Reset game</button>
+            <div id="text-result"></div>
+        </div>
         <div id="word"></div>
-        <div id="categories-container"></div>
+        <div id="categories-container">
+        </div>
             <div>
                 <input id="letter-input" type="text" name="letter-input" placeholder="Enter a letter">
             </div>
-            <div class="game-buttons">
-                <button id="start-button">Start new game</button>
-                <button id="restart-button">Restart game</button>
-                <div id="text-result"></div>
-            </div>
-        <span id="clue"></span>
+        <div hangman>
+        <img src="/img/quadro.jpg" id="quadro" hidden>
+        <img src="/img/quadro1.jpg" id="head" hidden>
+        <img src="/img/quadro2.jpg" id="body" hidden>
+        <img src="/img/quadro3.jpg" id="arm1" hidden>
+        <img src="/img/quadro4.jpg" id="arm2" hidden>
+        <img src="/img/quadro5.jpg" id="leg1" hidden>
+        <img src="/img/quadro6.jpg" id="leg2" hidden>
+    </div>
+    <span id="clue"></span>
     </main>
-</body>
-<footer>
-
-
-</footer>
+    <footer>
+    </footer>
+    <script src="./js/game.js"></script>
+    <script src="./js/index.js"></script>
 </html>

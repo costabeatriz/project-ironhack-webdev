@@ -4,103 +4,122 @@
 //4.Se errar, começa a desenhar-se o boneco (primeiro a cabeça, depois o tronco, de seguida pernas e braços e termina-se com olhos, nariz e boca);
 //5.O jogador perde se não conseguir identificar a palavra antes do desenho estar completo;
 
-//Keyboard letters
-const alphabet = []
-
-//array of categories
-let categories = {
-    pets:[
-       "cat",
-       "dog",
-       "snake",
-       "hamster",
-       "fish",
-       "bird",
-       "rabbits"
-    ],
-    fruits:[
-        "banana",
-        "apple",
-        "strawberry",
-        "orange",
-        "pear",
-        "blueberry",
-        "plum",
-        "peach"
-    ],
-    planets:[
-        "earth",
-        "mars",
-        "venus",
-        "mercury",
-        "jupiter",
-        "uranus",
-        "neptune",
-        "saturn"
-    ],
-    country:[
-        "brazil",
-        "mexico",
-        "portugal",
-        "italy",
-        "france",
-        "germany",
-        "turkey"
-    ]
-};
-
-let winCount = 0;
+let pets = [
+"cat",
+"dog",
+"snake",
+"hamster",
+"fish",
+"bird",
+"rabbits"
+]
 let count = 0;
-let chosenWord = "";
+let chosenWord = '';
+let modifiedWord = '';
+let letters = null;
 
-const canvas = document.getElementById("canvas");
 const word = document.getElementById("word");
 const categoriesContainer = document.getElementById("categories-container");
-const letterContainer = document.getElementById("letter-container")
-const userInputSection = document.getElementById("user-input-section")
+const userInputSection = document.getElementById("letter-input")
 const gameButtons = document.getElementById("game-buttons");
 const startButton = document.getElementById("start-button");
-const restartButton = document.getElementById("restart-button");
+const resetButton = document.getElementById("reset-button");
 const textresult = document.getElementById("text-result");
 
+function startGame(){ 
+  pickRandomWord()
+}
 
-//Create category buttons
-function createButtonCategories(){
-    categoriesContainer.innerHTML += `<h3>Please Select An Option</h3>`;
-    let buttonCon = document.createElement("div");
-    for (let value in categories) {
-      buttonCon.innerHTML += `<button class="categories" onclick="generateWord('${value}')">${value}</button>`;
+
+function pickRandomWord(){
+  chosenWord = modifiedWord = pets[Math.floor(Math.random() * pets.length)];
+  chosenWord = modifiedWord = chosenWord.toUpperCase();
+}
+
+function displayWord(a){
+  a.innerHTML = '';
+  pickRandomWord();
+  for(let i = 0; i < chosenWord,length;i++){
+    let letters = document.createElement('span');
+    a.appendChil(letters)
+  }
+}
+//Replace span for letter
+function replaceAsLetter(type){
+  for( let i = 0; i < chosenWord.length; i++){
+    if(chosenWord[i] == type){
+      letters.children[i].textContent = type
     }
-    categoriesContainer.appendChild(buttonCon);
-  };
+  }
+}
+//Verifify if userInput is valid
 
-//Word Generator
-function generateWord(categoriesValue){
-    let categoriesButtons = document.querySelectorAll(".categories");
-    //If categoriesvalue matches the button innerText then highlight the button
-    categoriesButtons.forEach((button) => {
-      if (button.innerText.toLowerCase() === optionValue) {
-        button.classList.add("active");
-      }
-      button.disabled = true;
-    })
-     //initially hide letters, clear previous word
-  letterInput.classList.remove("hide");
-  userInputSection.innerText = "";
-
-  let categoriesArray = categories[categoriesValue];
-  //choose random word
-  chosenWord = categoriesArray[Math.floor(Math.random() * categoriesArray.length)];
-  chosenWord = chosenWord.toUpperCase();
-
-  //replace every letter with span containing dash
-  let displayItem = chosenWord.replace(/./g, '<span class="dashes">_</span>');
-
-  //Display each element as span
-  userInputSection.innerHTML = displayItem;
+function verifyLetter(letter){
+userInputSection = letter.value;
+let foundLetter = modifiedWord.indexOf(userInputSection)
+if(foundLetter >=0){
+  modifiedWord = modifiedWord.replaceAll(userInputSection, "")
+  replaceAsLetter(userInputSection)
+  if(!modifiedWord.length){
+    endGame(letter, 0)
+  }
+}
+else {
+    count++;
+    hangman(count)
+    if (count > 5) {
+        endGame(letter,1)
+    }
+}
+// Reset the input value
+letter.value = "";
 }
 
-//Pick a category and ramdobly select word 
-function pickWord(){
+function endGame(letter,m){
+let message = !m ? "Congratulations, you won the game": "You failed! Try again?"
+alert(message)
+userInputSection.addEventListener('click', displayItem)
 
 }
+function hangman(){
+  switch (count) {
+    case 1:
+      document.getElementById('quadro').style.visibility='visible'
+    case 2:
+      document.getElementById('quadro').style.visibility='hidden'
+      document.getElementById('head').style.visibility='visible'
+      break;
+    case 3:
+      document.getElementById('head').style.visibility='hidden'
+      document.getElementById('body').style.visibility='visible'
+      break;
+    case 4:
+      document.getElementById('body').style.visibility='hidden'
+      document.getElementById('arm1').style.visibility='visible'
+      break;
+    case 5:
+      document.getElementById('arm1').style.visibility='hidden'
+      document.getElementById('arm2').style.visibility='visible'
+      break;
+    case 6:
+      document.getElementById('arm2').style.visibility='hidden'
+      document.getElementById('leg1').style.visibility='visible'
+      break;
+    case 7:
+      document.getElementById('leg1').style.visibility='hidden'
+      document.getElementById('leg2').style.visibility='visible'
+      break;
+    default:
+      break;
+  }
+}
+function resetGame(){
+count = 0;
+userInputSection = '';
+chosenWord = '';
+modifiedWord = '';
+}
+
+startButton.onclick = startGame
+userInputSection.addEventListener('click',verifyLetter())
+
