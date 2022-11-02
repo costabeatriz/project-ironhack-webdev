@@ -9,20 +9,19 @@
     <title>Troll kingdom</title>
 </head>
 <body>
-    <header>
-        
+    <header>    
     </header>
     <main>
         <div class="game-buttons">
             <button id="start-button">Start new game</button>
-            <button id="reset-button">Reset game</button>
+            <button id="reset-button" hidden>Reset game</button>
             <div id="text-result"></div>
         </div>
         <div id="word"></div>
         <div id="categories-container">
         </div>
             <div>
-                <input id="letter-input" type="text" name="letter-input" placeholder="Enter a letter">
+                <input id="letter-input" type="text" pattern="[A-Za-z]" name="letter-input" placeholder="Enter a letter" hidden>
             </div>
         <div hangman>
         <img src="/img/quadro.jpg" id="quadro" hidden>
