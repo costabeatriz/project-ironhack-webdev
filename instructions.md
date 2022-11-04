@@ -1,5 +1,7 @@
-1.Selecione a palavra e coloque um traço por cada letra;
-2.O jogador deve adivinhar a palavra dizendo uma letra de cada vez;
-3.Se acertar a letra, mostrar a letra no respetivo lugar;
-4.Se errar, começa a desenhar-se o boneco (primeiro a cabeça, depois o tronco, de seguida pernas e braços e termina-se com olhos, nariz e boca)
-5.O jogador perde se não conseguir identificar a palavra antes do desenho estar completo;
+CPU picks a random word
+Changer word letters into dashes
+Player tries to guess it, letter by letter. 
+Each time they guess a letter correctly, the CPU fills in the blanks for each occurrence of that letter. 
+When player guesses a letter that isn’t in the word, they lose a point and CPU draws part of a stickman for each wrong guess. 
+If CPU completes the stickman before the player guesses the word, player loses.
+
