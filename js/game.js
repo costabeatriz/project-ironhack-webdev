@@ -125,14 +125,13 @@ const initializer = () => {
     let button = document.createElement("button");
     button.classList.add("letters");
     button.innerText = String.fromCharCode(i);
-    //character button click
     button.addEventListener("click", () => {
       let letterArray = chosenWord.split("");
       let dashes = document.getElementsByClassName("dashes");
-      //if array contains clciked value replace the matched dash with letter else dram on canvas
+      //if array contains chosen letter replace dash with letter 
       if (letterArray.includes(button.innerText)) {
         letterArray.forEach((letter, index) => {
-          //if character in array is same as clicked button
+          //if letter in array is same as clicked button
           if (letter === button.innerText) {
             //replace dash with letter
             dashes[index].innerText = letter;
@@ -169,6 +168,7 @@ const initializer = () => {
   eraseHangman();
 };
 
+// Erase all of hagman() content!
 function eraseHangman(){
     document.getElementById('span7').setAttribute('hidden', true);
     document.getElementById('leg2').setAttribute('hidden', true);
@@ -183,7 +183,9 @@ function eraseHangman(){
     document.getElementById('span5').setAttribute('hidden', true);
     document.getElementById('span6').setAttribute('hidden', true);
 }
-//draw the man
+
+//Show hangman's draw images.
+
 function hangman(count) {
     switch (count) {
         case 1:
