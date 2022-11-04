@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title>Troll kingdom</title>
-</head>
-<body>
-    <header>    
-    </header>
-    <main>
-        <div class="game-buttons">
-            <button id="start-button">Start new game</button>
-            <button id="reset-button" hidden>Reset game</button>
-            <div id="text-result"></div>
-        </div>
-        <div id="word"></div>
-        <div id="categories-container">
-        </div>
-            <div>
-                <input id="letter-input" type="text" pattern="[A-Za-z]" name="letter-input" placeholder="Enter a letter" hidden>
-            </div>
-        <div hangman>
-        <img src="/img/quadro.jpg" id="quadro" hidden>
-        <img src="/img/quadro1.jpg" id="head" hidden>
-        <img src="/img/quadro2.jpg" id="body" hidden>
-        <img src="/img/quadro3.jpg" id="arm1" hidden>
-        <img src="/img/quadro4.jpg" id="arm2" hidden>
-        <img src="/img/quadro5.jpg" id="leg1" hidden>
-        <img src="/img/quadro6.jpg" id="leg2" hidden>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h1>HANGMAN GAME</h1>
+        <h6>[no people will actually be harmed during this game]</h6>
+      <div id="categories-container"></div>
+      <div id="letter-container" class="letter-container hide"></div>
+      <div id="user-input-section"></div>
+      <div hangman>
+        <img src="/img/quadro.jpg" alt="hangman" id="hanger" hidden>
+        <h5 id="span1" hidden>6 lives remaining</h5>
+        <img src="/img/quadro1.jpg" alt="hangman head" id="head" hidden>
+        <h5 id="span2" hidden>5 lives remaining</h5>
+        <img src="/img/quadro2.jpg" alt="hangman body" id="body" hidden>
+        <h5 id="span3" hidden>4 lives remaining</h5>
+        <img src="/img/quadro3.jpg" alt="hangman arm1" id="arm1" hidden>
+        <h5 id="span4" hidden>3 lives remaining</h5>
+        <img src="/img/quadro4.jpg" alt="hangman arm2" id="arm2" hidden>
+        <h5 id="span5" hidden>2 lives remaining</h5>
+        <img src="/img/quadro5.jpg" alt="hangman leg1" id="leg1" hidden>
+        <h5 id="span6" hidden>1 lives remaining</h5>
+        <img src="/img/quadro6.jpg" alt="hangman leg2" id="leg2" hidden>
+        <h5 id="span7" hidden>0 lives remaining</h5>
     </div>
-    <span id="clue"></span>
-    </main>
-    <footer>
-    </footer>
+      <div id="new-game-container" class="new-game-popup hide">
+        <div id="result-text"></div>
+        <button id="new-game-button">New Game</button>
+      </div>
+    </div>
+    <!-- Script -->
     <script src="./js/game.js"></script>
-    <script src="./js/index.js"></script>
+  </body>
 </html>
