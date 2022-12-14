@@ -57,7 +57,7 @@ const resultText = document.getElementById("result-text");
 
 //Display option buttons
 function displayOptions() {
-  optionsContainer.innerHTML += `<h3>Please Select An Option</h3>`;
+  optionsContainer.innerHTML += `<h3>Please, select a category:</h3>`;
   let buttonCon = document.createElement("div");
   for (let value in options) {
     buttonCon.innerHTML += `<button class="options" onclick="generateWord('${value}')">${value}</button>`;
